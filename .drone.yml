@@ -1,8 +1,10 @@
-image: "ruby:2.2.1"
+image: docker.betterdoctor.com:443/ci-test-project
 script:
-  - bundle install
-  - bundle exec rake db:schema:load
-  - bundle exec rspec
+  - ./.drone/build.sh
+deploy:
+  bash:
+    script:
+      - ./.drone/deploy.sh
 notify:
   email:
     recipients:
