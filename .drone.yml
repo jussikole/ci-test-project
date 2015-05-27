@@ -1,4 +1,4 @@
-image: ruby2.2.1
+image: "ruby:2.2.1"
 script:
   - bundle install
   - bundle exec rake db:schema:load
