@@ -16,6 +16,5 @@ done
 
 docker-build -t $REGISTRY/$IMAGE .
 
-
 # Restart docker
 start-stop-daemon --stop --pidfile "/var/run/docker.pid"
