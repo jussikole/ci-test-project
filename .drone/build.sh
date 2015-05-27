@@ -9,8 +9,8 @@ PROJECT="ci-test-project"
 
 cd /var/cache/drone/src/$DOMAIN/$OWNER/$PROJECT
 
+bundle install
 bundle exec rspec
-
 wrapdocker
 
 until docker info >/dev/null 2>&1; do
