@@ -1,7 +1,11 @@
 #!/bin/bash
 set -e
 
-. ./config.sh
+REGISTRY="docker.betterdoctor.com:443"
+IMAGE="ci-test-project"
+DOMAIN="github.com"
+OWNER="jussikole"
+PROJECT="ci-test-project"
 
 cd /var/cache/drone/src/$DOMAIN/$OWNER/$PROJECT
 
