@@ -1,10 +1,6 @@
 image: "docker.betterdoctor.com:443/bd-webbase:latest"
 script:
   - ./.drone/build.sh
-#deploy:
-#  bash:
-#    script:
-#      - ./.drone/deploy.sh
 notify:
   email:
     recipients:
