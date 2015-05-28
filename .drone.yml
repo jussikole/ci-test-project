@@ -1,4 +1,4 @@
-image: "docker.betterdoctor.com:443/bd-webbase:latest"
+image: "https://docker.betterdoctor.com:443/bd-webbase:latest"
 script:
   - ./.drone/build.sh
 notify:
