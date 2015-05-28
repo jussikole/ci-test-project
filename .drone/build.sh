@@ -11,11 +11,12 @@ PROJECT="ci-test-project"
 source /etc/profile.d/rvm.sh
 
 cd /var/cache/drone/src/$DOMAIN/$OWNER/$PROJECT
-rvm install 2.2.1
+#rvm install 2.2.1
 source .rvmrc
 
 bundle install
 bundle exec rspec
+
 wrapdocker
 
 until sudo docker info >/dev/null 2>&1; do
