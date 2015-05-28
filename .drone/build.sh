@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+docker pull docker.betterdoctor.com:443/bd-webdrone:latest
+
 REGISTRY="docker.betterdoctor.com:443"
 IMAGE="ci-test-project"
 DOMAIN="github.com"
@@ -19,7 +21,7 @@ until docker info >/dev/null 2>&1; do
 done
 
 echo "lol"
-docker-build -t $REGISTRY/$IMAGE .
+docker build -t $REGISTRY/$IMAGE .
 
 # Restart docker
 start-stop-daemon --stop --pidfile "/var/run/docker.pid"
