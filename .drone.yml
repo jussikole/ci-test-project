@@ -1,6 +1,6 @@
 #image: "docker.betterdoctor.com:443/bd-webdrone:latest"
 #image: "ruby:2.2.1"
-image: "dockerswarm/dind:1.6.0"
+image: "jussikole/bd-webdrone"
 script:
   - ./.drone/build.sh
 notify:
