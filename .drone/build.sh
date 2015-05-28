@@ -18,6 +18,7 @@ until docker info >/dev/null 2>&1; do
 	sleep 5
 done
 
+echo "lol"
 docker-build -t $REGISTRY/$IMAGE .
 
 # Restart docker
