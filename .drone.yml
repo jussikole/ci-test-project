@@ -1,5 +1,4 @@
 image: "docker.betterdoctor.com:443/bd-webbase:latest"
-image: ruby:2.2.1
 script:
   - ./.drone/build.sh
 #deploy:
