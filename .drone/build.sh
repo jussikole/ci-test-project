@@ -7,8 +7,11 @@ DOMAIN="github.com"
 OWNER="jussikole"
 PROJECT="ci-test-project"
 
+# Make rvm  available
+source /etc/profile.d/rvm.sh
+
 cd /var/cache/drone/src/$DOMAIN/$OWNER/$PROJECT
-/usr/local/rvm/bin/rvm install 2.2.1
+rvm install 2.2.1
 source .rvmrc
 
 bundle install
