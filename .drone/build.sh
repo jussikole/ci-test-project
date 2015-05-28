@@ -1,8 +1,6 @@
 #!/bin/bash
 set -e
 
-docker pull docker.betterdoctor.com:443/bd-webdrone:latest
-
 REGISTRY="docker.betterdoctor.com:443"
 IMAGE="ci-test-project"
 DOMAIN="github.com"
@@ -15,13 +13,13 @@ bundle install
 bundle exec rspec
 wrapdocker
 
-until docker info >/dev/null 2>&1; do
+until sudo docker info >/dev/null 2>&1; do
 	echo "Waiting for internal docker.."
 	sleep 5
 done
 
 echo "lol"
-docker build -t $REGISTRY/$IMAGE .
+sudo docker build -t $REGISTRY/$IMAGE .
 
 # Restart docker
-start-stop-daemon --stop --pidfile "/var/run/docker.pid"
+sudo start-stop-daemon --stop --pidfile "/var/run/docker.pid"
