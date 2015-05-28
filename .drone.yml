@@ -1,11 +1,11 @@
-#image: docker.betterdoctor.com:443/ci-test-project
+image: "docker.betterdoctor.com:443/bd-webbase:latest"
 image: ruby:2.2.1
 script:
   - ./.drone/build.sh
-deploy:
-  bash:
-    script:
-      - ./.drone/deploy.sh
+#deploy:
+#  bash:
+#    script:
+#      - ./.drone/deploy.sh
 notify:
   email:
     recipients:
