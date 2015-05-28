@@ -8,6 +8,9 @@ OWNER="jussikole"
 PROJECT="ci-test-project"
 
 cd /var/cache/drone/src/$DOMAIN/$OWNER/$PROJECT
+rvm install 2.2.1
+source .rvmrc
+
 
 bundle install
 bundle exec rspec

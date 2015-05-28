@@ -1,0 +1,6 @@
+#export rvm_trust_rvmrcs_flag=1 
+if [[ -s "/home/ubuntu/.rvm/environments/ruby-2.2.1@ci-test-project" ]] ; then
+  . "/home/ubuntu/.rvm/environments/ruby-2.2.1@ci-test-project"
+else
+  rvm --create use ruby-2.2.1@ci-test-project
+fi
