@@ -18,7 +18,7 @@ cd /var/cache/drone/src/$DOMAIN/$OWNER/$PROJECT
 #bundle exec rspec
 
 type wrapdocker
-wrapdocker
+#wrapdocker
 
 until sudo docker info >/dev/null 2>&1; do
 	echo "Waiting for internal docker.."
