@@ -2,7 +2,8 @@
 set -e
 
 source /etc/profile.d/rvm.sh
-cd /src
 
+rvm rvmrc trust src/
+cd /src
 bundle install
 bundle exec rspec
