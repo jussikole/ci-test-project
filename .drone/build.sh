@@ -17,11 +17,17 @@ cd /var/cache/drone/src/$DOMAIN/$OWNER/$PROJECT
 #bundle install
 #bundle exec rspec
 
-#wrapdocker
+wrapdocker
 
+i=0
 until sudo docker info >/dev/null 2>&1; do
 	echo "Waiting for internal docker.."
 	sleep 5
+	i=$[$i+1]
+	if (( $i == 10 )); then
+		echo "Timeout"
+		exit 1
+	fi 
 done
 
 echo "lol"
