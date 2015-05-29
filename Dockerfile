@@ -8,4 +8,4 @@ RUN chmod 700 ./docker_init.sh
 
 RUN ls -al
 
-ENTRYPOINT ['./docker_init.sh']
+ENTRYPOINT ["./docker_init.sh"]
